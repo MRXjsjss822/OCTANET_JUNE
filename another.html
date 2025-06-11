@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Jayash Frames – Professional photography portfolio featuring wedding, nature, and portrait photography."/>
+  <title>Jayash Frames – Photography Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-padding-top: 100px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: url('https://images.pexels.com/photos/3014013/pexels-photo-3014013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 20px 10px;
+      text-align: center;
+      z-index: 1000;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    header.hide {
+      transform: translateY(-100%);
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 900;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(to right, #f9a826, #ff6a00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    nav a:hover {
+      color: #f9a826;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: #f9a826;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      z-index: 2000;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px;
+      margin: 160px auto 30px;
+      max-width: 1000px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      border: none;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      color: #f9a826;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      font-size: 22px;
+      color: #444;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .testimonial blockquote {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(15px);
+      padding: 20px;
+      border-radius: 16px;
+      max-width: 600px;
+      font-style: italic;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: center;
+      color: #f9a826;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      text-align: center;
+      padding: 20px;
+      color: #333;
+      border-radius: 12px 12px 0 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+      .stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progress"></div>
+  <header id="main-header">
+    <h1>Jayash Frames</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero glass" data-aos="fade-up">
+    <h2>Capturing Moments That Matter</h2>
+    <p>Welcome to my world of storytelling through the lens.</p>
+  </section>
+
+  <section id="about" class="glass" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Hello! I'm <strong>Jayash</strong>, a passionate photographer who captures emotions, landscapes, and moments with heart and creativity.</p>
+  </section>
+
+  <section id="gallery" class="glass" data-aos="fade-up">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <a href="https://images.pexels.com/photos/169193/pexels-photo-169193.jpeg" class="glightbox" data-gallery="images"><img src="https://images.pexels.com/photos/169193/pexels-photo-169193.jpeg" alt="Wedding"></a>
+        <h3>Wedding</h3>
+      </div>
+      <div class="gallery-item">
+        <a href="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg" class="glightbox" data-gallery="images"><img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg" alt="Nature"></a>
+        <h3>Nature</h3>
+      </div>
+      <div class="gallery-item">
+        <a href="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" class="glightbox" data-gallery="images"><img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Portrait"></a>
+        <h3>Portrait</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass stats" data-aos="zoom-in">
+    <div><span class="count" data-target="7">0</span>+ Years</div>
+    <div><span class="count" data-target="150">0</span>+ Projects</div>
+    <div><span class="count" data-target="100">0</span>+ Clients</div>
+  </section>
+
+  <section id="testimonials" class="glass testimonial" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <blockquote>"Absolutely stunning! Jayash turned our wedding into magic."<br>– Priya & Rahul</blockquote>
+    <blockquote>"Best portrait photographer I’ve ever met. Super professional!"<br>– Aditi</blockquote>
+  </section>
+
+  <section id="faq" class="glass faq" data-aos="fade-up">
+    <h2>FAQ</h2>
+    <details><summary>What type of photography do you specialize in?</summary><p>Weddings, portraits, and nature photography.</p></details>
+    <details><summary>Do you travel for projects?</summary><p>Yes, I’m open to national and international projects.</p></details>
+    <details><summary>What’s your delivery time?</summary><p>Usually within 1–2 weeks depending on the shoot type.</p></details>
+  </section>
+
+  <section id="contact" class="glass" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:jayash@example.com">jayash@example.com</a></p>
+    <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+    <p>Instagram: <a href="https://instagram.com/jayashframes" target="_blank">@jayashframes</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jayash Frames. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    AOS.init();
+
+    const lightbox = GLightbox({ selector: '.glightbox' });
+
+    window.addEventListener('scroll', () => {
+      const progress = document.getElementById('progress');
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      progress.style.width = `${scrolled}%`;
+    });
+
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    const counters = document.querySelectorAll('.count');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = 100;
+        const inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      }
+      updateCount();
+    });
+  </script>
+</body>
+</html>
